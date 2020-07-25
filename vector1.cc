@@ -3,11 +3,17 @@
 #include <vector> // vector class-template definition
 using namespace std;
 
-// prototype for function template printVector
-template < typename T > void printVector( const vector< T > &integers2 );
-
-int main()
+void printVector( const vector< int > &v )
 {
+   vector< int >::const_iterator constIterator; // const_iterator
+
+   // display vector elements using const_iterator
+   for ( constIterator = v.begin(); 
+      constIterator != v.end(); ++constIterator )
+      cout << *constIterator << ' ';
+} 
+
+int main(){
    const int SIZE = 6; // define array size
    int array[ SIZE ] = { 1, 2, 3, 4, 5, 6 }; // initialize array
    vector< int > integers; // create vector of ints
@@ -42,16 +48,6 @@ int main()
       cout << *reverseIterator << ' ';       
 
    cout << endl;
-} // end main
+} 
 
-// function template for outputting vector elements
-template < typename T > void printVector( const vector< T > &integers2 )
-{
-   typename vector< T >::const_iterator constIterator; // const_iterator
-
-   // display vector elements using const_iterator
-   for ( constIterator = integers2.begin(); 
-      constIterator != integers2.end(); ++constIterator )
-      cout << *constIterator << ' ';
-} // end function printVector
 
