@@ -4,11 +4,10 @@
 using namespace std;
 
 void printVector( const vector< int > &v ){
-   vector< int >::const_iterator constIterator; 
+   vector< int >::const_iterator cnstIter; 
 
-   for ( constIterator = v.begin(); 
-      constIterator != v.end(); ++constIterator )
-      cout << *constIterator << ' ';
+   for ( cnstIter = v.begin(); cnstIter != v.end(); ++cnstIter )
+      cout << *cnstIter << ' ';
 } 
 
 int main(){
