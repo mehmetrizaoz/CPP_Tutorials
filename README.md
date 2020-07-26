@@ -1,6 +1,6 @@
-# compile
+#compile
 g++ -Wall vector1.cc -o hello
-#-------------------------------------------
+
 #staging
 git add *.py 
 
