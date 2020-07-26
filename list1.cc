@@ -1,85 +1,68 @@
 #include <iostream>
 #include <list> 
 #include <algorithm>
-#include <iterator> 
+
 using namespace std;
 
-void printList( const list< int > &listRef )
-{
-    ostream_iterator< int > output( cout, " " );
-    copy( listRef.begin(), listRef.end(), output );
+void printList( const list< int > &l ){
+   list< int >::const_iterator cnstIter; 
+
+   for ( cnstIter = l.begin(); cnstIter != l.end(); ++cnstIter )
+      cout << *cnstIter << ' ';
+      
+   cout << endl;
 } 
 
-int main()
-{ 
+int main(){ 
    const int SIZE = 4;
    int array[ SIZE ] = { 2, 6, 4, 8 };
-   list< int > values; // create list of ints
-   list< int > otherValues; // create list of ints
+   list< int > v, v2; 
 
-   // insert items in values
-   values.push_front( 1 );
-   values.push_front( 2 );
-   values.push_back( 4 );
-   values.push_back( 3 );
-   
-   cout << "values contains: ";
-   printList( values );
+   v.push_front( 1 );
+   v.push_front( 2 );
+   v.push_back( 4 );
+   v.push_back( 3 );  
+    
+   printList( v );
 
-   values.sort(); // sort values
-   cout << "\nvalues after sorting contains: ";
-   printList( values );
+   v.sort();
+   printList( v );
   
-   // insert elements of array into otherValues                   
-   otherValues.insert( otherValues.begin(), array, array + SIZE );
-   cout << "\nAfter insert, otherValues contains: ";
-   printList( otherValues );
+   v2.insert( v2.begin(), array, array + SIZE );
+   cout << "insert: ";      
+   printList( v2 );
 
-   values.splice( values.end(), otherValues );
-   cout << "\nAfter splice, values contains: ";
-   printList( values );
+   v.splice( v.end(), v2 );
+   cout << "splice: ";   
+   printList( v );
 
-   values.sort(); // sort values
-   cout << "\nAfter sort, values contains: ";
-   printList( values );
-
-   otherValues.insert( otherValues.begin(), array, array + SIZE );
-   otherValues.sort();                         
-   cout << "\nAfter insert and sort, otherValues contains: ";
-   printList( otherValues );
+   v2.insert( v2.begin(), array, array + SIZE );
+   v2.sort();
+   cout << "sort: ";
+   printList( v2 );
    
-   // remove otherValues elements and insert into values in sorted order
-   values.merge( otherValues );                         
-   cout << "\nAfter merge:\n   values contains: ";
-   printList( values );
-   cout << "\n   otherValues contains: ";
-   printList( otherValues );
+   v.merge( v2 );                         
+   cout << "merge: ";
+   printList( v );
 
-   values.pop_front(); // remove element from front
-   values.pop_back(); // remove element from back
-   cout << "\nAfter pop_front and pop_back:\n   values contains: ";
-   printList( values );
+   v.pop_front();
+   v.pop_back();
+   printList( v );
 
-   values.unique(); // remove duplicate elements
-   cout << "\nAfter unique, values contains: ";
-   printList( values );
-
-   values.swap( otherValues );
-   cout << "\nAfter swap:\n   values contains: ";
-   printList( values );
-   cout << "\n   otherValues contains: ";
-   printList( otherValues );
-
-   values.assign( otherValues.begin(), otherValues.end() );
-   cout << "\nAfter assign, values contains: ";
-   printList( values );
-
-   values.merge( otherValues ); 
-   cout << "\nAfter merge, values contains: ";
-   printList( values ); 
+   v.unique();
+   cout << "unique: ";
+   printList( v );
    
-   values.remove( 4 ); // remove all 4s
-   cout << "\nAfter remove( 4 ), values contains: ";
-   printList( values );
+   v.swap( v2 );
+   printList( v );
+
+   v.assign( v2.begin(), v2.end() );
+   printList( v );
+
+   v.merge( v2 ); 
+   printList( v );
+   
+   v.remove( 4 );
+   printList( v );
    cout << endl;
 } 
