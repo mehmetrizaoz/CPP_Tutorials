@@ -1,3 +1,8 @@
+/*
+use contiguous storage locations for their elements
+their elements can also be accessed using offsets on regular pointers
+their size can change automatically by the container.
+*/
 #include <iostream>
 #include <vector> 
 
