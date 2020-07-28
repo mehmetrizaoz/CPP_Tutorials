@@ -3,7 +3,7 @@
 #include "Child.h"
 
 int main(){
-   Child myChild("no name");
+   Child myChild;
    string word;
    
    getline( cin, word );  

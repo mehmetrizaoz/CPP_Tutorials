@@ -5,7 +5,7 @@ using namespace std;
 
 class Child{
 public:
-   Child( string val );
+   Child();
    ~Child();
    void speak( string st );
    string getName();

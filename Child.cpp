@@ -4,8 +4,8 @@
 
 using namespace std;
    
-Child::Child( string val ){
-   setName(val);
+Child::Child(){
+   name = "no name";
 }
 
 Child::~Child(){
