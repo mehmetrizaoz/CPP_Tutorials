@@ -4,8 +4,8 @@
 
 using namespace std;
    
-Child::Child(){
-   name = "no name";
+Child::Child(string val){
+   setName( val );
 }
 
 Child::~Child(){
@@ -16,7 +16,7 @@ void Child::speak( string st ){
    cout << st << endl;
 }
 
-string Child::getName(){
+string Child::getName() const{
    return name;
 }
 
