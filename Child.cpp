@@ -4,8 +4,10 @@
 
 using namespace std;
    
-Child::Child(string val){
-   setName( val );
+Child::Child(string v, string v2)
+   :name(v), 
+   sirName(v2) //init const member
+{
 }
 
 Child::~Child(){
@@ -18,6 +20,10 @@ void Child::speak( string st ){
 
 string Child::getName() const{
    return name;
+}
+
+string Child::getSirName() const{
+   return sirName;
 }
 
 void Child::setName( string val ){

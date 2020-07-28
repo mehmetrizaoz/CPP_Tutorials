@@ -3,7 +3,9 @@
 #include "Child.h"
 
 int main(){
-   Child myChild("mehmet");
+   Child myChild("mehmet", "oz");
+//   Child myChild("mehmet");
+//   Child myChild();   
    string word;
    
    getline( cin, word );  
@@ -12,6 +14,7 @@ int main(){
  
    myChild.setName("ali");
    cout << "my name is " << myChild.getName() << endl;
+   cout << "my sirname is " << myChild.getSirName() << endl;
 }
 
 
