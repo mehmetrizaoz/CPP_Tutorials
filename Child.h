@@ -10,9 +10,9 @@ public:
    void speak( string st );
    string getName() const;//const inst.'s can call this func.
    string getSirName() const;
-   static int getCount();
-   Child &setName( string val );//not this one
-   Child &setSirName( string val );//not this one   
+   static int getCount(); //can use static members
+   Child &setName( string val );//for this ptr
+   Child &setSirName( string val );
 private:
    string name;
    string sirName;

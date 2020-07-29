@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int Child::count = 0;
+int Child::count = 0; //static member init
 
 Child::Child(string v, string v2)
 :name(v), sirName(v2)

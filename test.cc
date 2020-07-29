@@ -15,7 +15,7 @@ int main(){
    getline( cin, word );  
    myChild.speak("You told me to say " + word); 
    
-   cout << Child::getCount() << endl;
+   cout << Child::getCount() << endl; //static func. call
 }
 
 
