@@ -6,7 +6,7 @@ using namespace std;
    
 Child::Child(string v, string v2)
    :name(v), 
-   sirName(v2) //init const member
+   sirName(v2) //init const member object
 {
 }
 
@@ -14,8 +14,8 @@ Child::~Child(){
    cout << getName() << "'s destructor is working" << endl;
 }   
 
-void Child::speak( string st ){
-   cout << st << endl;
+void Child::speak( string v ){
+   cout << v << endl;
 }
 
 string Child::getName() const{
@@ -26,7 +26,14 @@ string Child::getSirName() const{
    return sirName;
 }
 
-void Child::setName( string val ){
-   name = val;
+Child &Child::setName( string v ){
+   name = v;
+   return *this;
 }
+
+Child &Child::setSirName( string v ){
+   sirName = v;
+   return *this;
+}
+
 

@@ -10,9 +10,11 @@ public:
    void speak( string st );
    string getName() const;//const inst.'s can call this func.
    string getSirName() const;
-   void setName( string val );//not this one
+   Child &setName( string val );//not this one
+   Child &setSirName( string val );//not this one   
 private:
    string name;
-   const string sirName;
+   /*const*/ string sirName;
+   
 };
 
