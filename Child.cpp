@@ -3,14 +3,21 @@
 #include "Child.h"
 
 using namespace std;
-   
+
+int Child::count = 0;
+
 Child::Child(string v, string v2)
-   :name(v), 
-   sirName(v2) //init const member object
+:name(v), sirName(v2)
 {
+   count++;
+}
+
+int Child::getCount(){
+   return count;
 }
 
 Child::~Child(){
+   count--;
    cout << getName() << "'s destructor is working" << endl;
 }   
 
@@ -29,11 +36,15 @@ string Child::getSirName() const{
 Child &Child::setName( string v ){
    name = v;
    return *this;
-}
+}		
 
 Child &Child::setSirName( string v ){
    sirName = v;
    return *this;
 }
+
+
+
+
 
 
