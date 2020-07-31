@@ -8,7 +8,7 @@ public:
    Child( string = "noName", string = "noSirName" );
    ~Child();
    void speak( string st );
-   string getName() const;//const inst.'s can call this func.
+   string getName() const;//const objects can call this func.
    string getSirName() const;
    static int getCount(); //can use static members
    Child &setName( string val );//for this ptr
