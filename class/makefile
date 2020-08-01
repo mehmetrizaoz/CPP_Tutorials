@@ -8,10 +8,10 @@ child: $(objects)
 	g++ $^ -o $@
 
 Child.o: Child.cc
-	g++ $(CPPFLAGS) -c $^
+	g++ $(CPPFLAGS) -c $<
 	 
 test.o: test.cc
-	g++ $(CPPFLAGS) -c $^
+	g++ $(CPPFLAGS) -c $<
 
 .PHONY: clean
 clean:
