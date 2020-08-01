@@ -26,6 +26,12 @@ git log --grep 'messa'
 git log --S 'diff'
 git log --oneline --decorate --graph --all
 
+#go to a specific commit creating a new branch
+git branch test
+git checkout test
+git reset --hard 23g423j4gjh435g23j45g
+
+
 #change last commit
 git commit --amend
 

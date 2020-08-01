@@ -5,7 +5,10 @@ child: $(objects)
 	g++ $^ -o $@
 
 Child.o: Child.cc Child.h
+	g++ -c $^
+	 
 test.o: test.cc Child.h
+	g++ -c $^
 
 .PHONY: clean
 clean:
