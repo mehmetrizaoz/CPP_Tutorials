@@ -5,7 +5,7 @@ using namespace std;
 
 class human{
 public:
-   human();
+   human(string = "David", string = "Brown", int = 160, int = 65);
    ~human();
    
    void tell( string v );

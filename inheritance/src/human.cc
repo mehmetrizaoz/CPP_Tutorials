@@ -6,7 +6,8 @@ using namespace std;
 
 int human::count = 0;
 
-human::human()
+human::human(string v1, string v2, int v3, int v4)
+:name(v1), sirName(v2), height(v3), weight(v4)
 {
    count++;
 }

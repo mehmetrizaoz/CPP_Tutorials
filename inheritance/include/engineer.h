@@ -6,9 +6,10 @@ using namespace std;
 
 class engineer : public human{
 public:
-   engineer();  
+   engineer(string = "David", string = "Brown", int = 160, int = 65, string = "Mr");  
    void calculate();   
    string getTitle() const;
+   void print() const;
 
    engineer &setTitle( string v );
 private:
