@@ -1,21 +1,23 @@
 #include <iostream>
 #include <string>
-#include "Child.h"
+#include "engineer.h"
 
 int main(){
-   Child myChild;
-   Child mySecondChild("mehmet", "oz");
-   string word;
+   engineer mehmet;
    
-   cout << "my name is " << myChild.getName() << " ";
-   cout << myChild.getSirName() << endl;
+   mehmet.setTitle("Dr.").setName("Mehmet").setSirName("ÖZ")
+      .setHeight(180).setWeight(70);
+
+   cout << mehmet.getTitle() << " " << mehmet.getName() << " " << mehmet.getSirName() << endl;
+   cout << "height:" << mehmet.getHeight() << endl;
+   cout << "weight:" << mehmet.getWeight() << endl;
    
-   myChild.setName("ali").setSirName("kaya");   
+   cout << mehmet.getName(); mehmet.calculate();
+   mehmet.tell("yankee go home");
+   mehmet.run();
+   mehmet.walk();
    
-   getline( cin, word );  
-   myChild.speak("You told me to say " + word); 
-   
-   cout << "object count " << Child::getCount() << endl; //static func. call
+
 }
 
 

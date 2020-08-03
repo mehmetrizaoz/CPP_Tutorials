@@ -3,11 +3,11 @@ vpath %.h include
 CC := g++
 
 CPPFLAGS = -I include
-objects = test.o Child.o
+objects = test.o human.o engineer.o
 
-all: child
+all: engineer
 
-child: $(objects)
+engineer: $(objects)
 	$(CC) $^ -o $@
 
 %.o: %.c
@@ -15,7 +15,7 @@ child: $(objects)
 
 .PHONY: clean help
 clean:
-	rm child $(objects)
+	rm engineer $(objects)
 
 help:
 	@echo "make"
