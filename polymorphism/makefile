@@ -3,11 +3,11 @@ vpath %.h include
 CC := g++
 
 CPPFLAGS = -I include
-objects = test.o human.o engineer.o
+objects = test.o human.o engineer.o doctor.o
 
-all: engineer
+all: exec
 
-engineer: $(objects)
+exec: $(objects)
 	$(CC) $^ -o $@
 
 %.o: %.c
@@ -15,7 +15,7 @@ engineer: $(objects)
 
 .PHONY: clean help
 clean:
-	rm engineer $(objects)
+	rm exec $(objects)
 
 help:
 	@echo "make"

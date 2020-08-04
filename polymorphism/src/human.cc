@@ -14,7 +14,7 @@ human::human(string v1, string v2, int v3, int v4)
 
 human::~human(){
    count--;
-   cout << getName() << "'s destructor is working" << endl;
+//   cout << getName() << "'s destructor is working" << endl;
 }   
 
 int human::getCount(){
@@ -33,9 +33,10 @@ void human::walk(){
    cout << getName() << " is walking" << endl;
 }
 
+/*
 void human::read() const{
    cout << getName() << " is reading" << endl;
-}
+}*/
 
 string human::getName() const{
    return name;

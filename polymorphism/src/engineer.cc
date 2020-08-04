@@ -14,10 +14,10 @@ void engineer::read() const{
 }
 
 void engineer::print() const{
+   cout << "------------" << endl;
    cout << getTitle() << " " << getName() << " " << getSirName() << endl;
    cout << "W: " << getWeight() << endl;
-   cout << "H: " << getHeight() << endl;
-
+   cout << "H: " << getHeight() << endl << "------------" << endl;
 }
 
 void engineer::calculate(){

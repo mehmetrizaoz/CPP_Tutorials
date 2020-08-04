@@ -1,3 +1,6 @@
+#ifndef HUMAN_H
+#define HUMAN_H
+
 #include <string>
 #include <iostream>
 
@@ -11,7 +14,7 @@ public:
    void tell( string v );
    void run();
    void walk();
-   virtual void read() const;
+   virtual void read() const = 0;
    
    string getName() const;
    string getSirName() const;
@@ -32,3 +35,4 @@ private:
    static int count;   
 };
 
+#endif
