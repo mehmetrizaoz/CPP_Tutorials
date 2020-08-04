@@ -15,6 +15,7 @@ public:
    void run();
    void walk();
    virtual void read() const = 0;
+   virtual void print() const = 0;
    
    string getName() const;
    string getSirName() const;
