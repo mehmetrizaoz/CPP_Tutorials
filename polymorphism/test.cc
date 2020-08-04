@@ -2,6 +2,11 @@
 #include <string>
 #include "engineer.h"
 #include "doctor.h"
+#include <vector> 
+
+void humanIsReading(human *hmn){
+   hmn->read();
+}
 
 int main(){
    engineer eng1;   
@@ -21,13 +26,19 @@ int main(){
    doc1.tell("i'm a doctor");
    doc1.run();
    doc1.walk();
-   doc1.read();    
-   
-   human *human_eng = &eng1;
-   human_eng->read(); 
-   
-   human *human_doc = &doc1;
-   human_doc->read(); 
+   doc1.read(); 
+            
+   vector < human *> humans;
+   humans.push_back(&eng1);
+   humans.push_back(&doc1);
+
+   cout << "------------------" << endl;
+   while (!humans.empty())
+   {
+      humanIsReading(humans.back());
+      humans.pop_back();
+   }
+
 }
 
 
