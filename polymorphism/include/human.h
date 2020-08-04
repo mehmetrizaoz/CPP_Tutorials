@@ -11,6 +11,7 @@ public:
    void tell( string v );
    void run();
    void walk();
+   virtual void read();
    
    string getName() const;
    string getSirName() const;

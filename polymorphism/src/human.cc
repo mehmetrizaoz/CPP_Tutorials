@@ -33,6 +33,10 @@ void human::walk(){
    cout << getName() << " is walking" << endl;
 }
 
+void human::read(){
+   cout << getName() << " is reading" << endl;
+}
+
 string human::getName() const{
    return name;
 }

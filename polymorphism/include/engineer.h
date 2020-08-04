@@ -10,7 +10,9 @@ public:
    void calculate();   
    string getTitle() const;
    void print() const;
-
+   
+   virtual void read();
+   
    engineer &setTitle( string v );
 private:
    string title;

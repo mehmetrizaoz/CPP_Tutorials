@@ -13,6 +13,9 @@ int main(){
    mehmet.tell("yankee go home");
    mehmet.run();
    mehmet.walk();
+   
+   human *x = &mehmet;
+   x->read();
 }
 
 
