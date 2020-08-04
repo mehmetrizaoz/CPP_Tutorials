@@ -3,19 +3,21 @@
 #include "engineer.h"
 
 int main(){
-   engineer mehmet;
+   engineer eng1;
    
-   mehmet.setTitle("Dr.").setName("Mehmet").setSirName("ÖZ");
-   mehmet.setHeight(180).setWeight(70);
+   eng1.setTitle("Dr.").setName("Nikola").setSirName("Tesla");
+   eng1.setHeight(170).setWeight(64);
 
-   mehmet.print();
-   mehmet.calculate();
-   mehmet.tell("yankee go home");
-   mehmet.run();
-   mehmet.walk();
+   eng1.print();
+   eng1.calculate();
+   eng1.tell("yankee go home");
+   eng1.run();
+   eng1.walk();
    
-   human *x = &mehmet;
-   x->read();
+   human *x = &eng1;
+   /*if read wasnt virtual then base class read would be executed*/
+   x->read(); 
+ 
 }
 
 

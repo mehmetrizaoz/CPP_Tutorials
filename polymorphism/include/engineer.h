@@ -11,7 +11,7 @@ public:
    string getTitle() const;
    void print() const;
    
-   virtual void read();
+   virtual void read() const;
    
    engineer &setTitle( string v );
 private:
