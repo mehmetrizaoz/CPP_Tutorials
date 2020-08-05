@@ -9,10 +9,12 @@ class Strategy;
 class TestBed{
   public:
     TestBed(){
-        strategy_ = NULL;
+        myStrategy = NULL;
     }
-    void setStrategy(int type);
-    Strategy *strategy_;
+    void setBehavior(int type);
+    void performBehavior();
+  private:
+    Strategy *myStrategy;
 };
 
 class Strategy{
@@ -24,35 +26,40 @@ class Strategy{
     virtual void behavior() = 0;
 };
 
-class LeftStrategy: public Strategy{
+class behaviorOne: public Strategy{
   private:
     void behavior(){
         cout << "left strategy" << endl;
     }
 };
 
-class RightStrategy: public Strategy{
+class behaviorTwo: public Strategy{
   private:
     void behavior(){
         cout << "right strategy" << endl;
     }
 };
 
-class CenterStrategy: public Strategy{
+class behaviorThree: public Strategy{
   private:
     void behavior(){
         cout << "center strategy" << endl;
     }
 };
 
-void TestBed::setStrategy(int type){  
-  delete strategy_;
+void TestBed::performBehavior(){
+   myStrategy->perform();
+}
+
+
+void TestBed::setBehavior(int type){  
+  delete myStrategy;
   if (type == 0)
-    strategy_ = new LeftStrategy();
+    myStrategy = new behaviorOne();
   else if (type == 1)
-    strategy_ = new RightStrategy();
+    myStrategy = new behaviorTwo();
   else if (type == 2)
-    strategy_ = new CenterStrategy();
+    myStrategy = new behaviorThree();
 }
 
 int main(){
@@ -62,8 +69,8 @@ int main(){
      cout << "Exit(other) Left(0) Right(1) Center(2): ";
      cin >> answer;
      if(answer > 2) break;
-     test.setStrategy(answer);
-     test.strategy_->perform();
+     test.setBehavior(answer);
+     test.performBehavior();
   }   
   return 0;
 }
