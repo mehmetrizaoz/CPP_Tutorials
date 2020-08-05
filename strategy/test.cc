@@ -6,15 +6,9 @@ using namespace std;
 
 class Strategy;
 
-class TestBed
-{
+class TestBed{
   public:
-    enum StrategyType
-    {
-        Dummy, Left, Right, Center
-    };
-    TestBed()
-    {
+    TestBed(){
         strategy_ = NULL;
     }
     void setStrategy(int type);
@@ -23,80 +17,66 @@ class TestBed
     Strategy *strategy_;
 };
 
-class Strategy
-{
+class Strategy{
   public:
-    Strategy(){}
-    void format()
-    {
-       justify();
+    void perform(){
+       behavior();
     }
-
   private:
-    virtual void justify() = 0;
+    virtual void behavior() = 0;
 };
 
-class LeftStrategy: public Strategy
-{
-  public:
-    LeftStrategy(): Strategy(){}
+class LeftStrategy: public Strategy{
   private:
-     /* virtual */void justify()
-    {
+    void behavior(){
         cout << "left strategy" << endl;
     }
 };
 
-class RightStrategy: public Strategy
-{
-  public:
-    RightStrategy(): Strategy(){}
+class RightStrategy: public Strategy{
   private:
-     /* virtual */void justify()
-    {
+    void behavior(){
         cout << "right strategy" << endl;
     }
 };
 
-class CenterStrategy: public Strategy
-{
-  public:
-    CenterStrategy(): Strategy(){}
+class CenterStrategy: public Strategy{
   private:
-     /* virtual */void justify()
-    {
+    void behavior(){
         cout << "center strategy" << endl;
     }
 };
 
 void TestBed::setStrategy(int type)
 {
+  
   delete strategy_;
-  if (type == Left)
+  if (type == 0)
     strategy_ = new LeftStrategy();
-  else if (type == Right)
+  else if (type == 1)
     strategy_ = new RightStrategy();
-  else if (type == Center)
+  else if (type == 2)
     strategy_ = new CenterStrategy();
 }
 
 void TestBed::doIt(){
-  strategy_->format();
+  strategy_->perform();
 }
 
 int main()
 {
   TestBed test;
   int answer;
-  cout << "Exit(0) Left(1) Right(2) Center(3): ";
-  cin >> answer;
-  while (answer)
-  {
-    test.setStrategy(answer);
-    test.doIt();
-    cout << "Exit(0) Left(1) Right(2) Center(3): ";
-    cin >> answer;
+  
+  while(1){
+     cout << "Exit(other) Left(0) Right(1) Center(2): ";
+     cin >> answer;
+     if(answer > 2) break;
+     test.setStrategy(answer);
+     test.doIt();
   }
+  
+  
   return 0;
 }
 
