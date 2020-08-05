@@ -9,12 +9,10 @@ class Strategy;
 class TestBed{
   public:
     TestBed(){
-        strategy_ = NULL;
+        behavior = NULL;
     }
     void setStrategy(int type);
-    void doIt();
-  private:
-    Strategy *strategy_;
+    Strategy *behavior;
 };
 
 class Strategy{
@@ -47,36 +45,26 @@ class CenterStrategy: public Strategy{
     }
 };
 
-void TestBed::setStrategy(int type)
-{
-  
-  delete strategy_;
+void TestBed::setStrategy(int type){  
+  delete behavior;
   if (type == 0)
-    strategy_ = new LeftStrategy();
+    behavior = new LeftStrategy();
   else if (type == 1)
-    strategy_ = new RightStrategy();
+    behavior = new RightStrategy();
   else if (type == 2)
-    strategy_ = new CenterStrategy();
+    behavior = new CenterStrategy();
 }
 
-void TestBed::doIt(){
-  strategy_->perform();
-}
-
-int main()
-{
+int main(){
   TestBed test;
-  int answer;
-  
+  int answer;  
   while(1){
      cout << "Exit(other) Left(0) Right(1) Center(2): ";
      cin >> answer;
      if(answer > 2) break;
      test.setStrategy(answer);
-     test.doIt();
-  }
-  
-  
+     test.behavior->perform();
+  }   
   return 0;
 }
 
