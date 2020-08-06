@@ -11,7 +11,7 @@ class TestBed{
     TestBed(){
         myStrategy = NULL;
     }
-    void setBehavior(int type);
+    void changeBehavior(int type);
     void performBehavior();
   private:
     Strategy *myStrategy;
@@ -52,7 +52,7 @@ void TestBed::performBehavior(){
 }
 
 
-void TestBed::setBehavior(int type){  
+void TestBed::changeBehavior(int type){  
   delete myStrategy;
   if (type == 0)
     myStrategy = new behaviorOne();
@@ -69,7 +69,7 @@ int main(){
      cout << "Exit(other) Left(0) Right(1) Center(2): ";
      cin >> answer;
      if(answer > 2) break;
-     test.setBehavior(answer);
+     test.changeBehavior(answer);
      test.performBehavior();
   }   
   return 0;
