@@ -3,21 +3,21 @@
 
 using namespace std;
 
-template <class T> class calc
-{
-  public:
-    T multiply(T x, T y);
-    T add(T x, T y);
+template <class T> 
+class calc{
+public:
+   T multiply(T x, T y);
+   T add(T x, T y);
 };
 
-template <class T> T calc<T>::multiply(T x,T y)
-{
-  return x*y;
+template <class T> 
+T calc<T>::multiply(T x,T y){
+   return x*y;
 }
 
-template <class T> T calc<T>::add(T x, T y)
-{
-  return x+y;
+template <class T> 
+T calc<T>::add(T x, T y){
+   return x+y;
 }
 
 int main(){
