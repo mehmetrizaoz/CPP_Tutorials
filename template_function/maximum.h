@@ -17,7 +17,7 @@ T maximum( T value1, T value2, T value3 )
 }
 
 template < typename T >
-void printArray ( const T * const array, int count ){
+void printArray ( T * array, int count ){
    for( int i=0; i<count; ++i)
       cout << array[i] << " ";
    cout << endl;
