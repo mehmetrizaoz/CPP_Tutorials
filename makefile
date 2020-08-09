@@ -1,12 +1,13 @@
-SUBDIRS := polymorphism inheritance class strategy template_function template_class
+SUBDIRS := polymorphism inheritance class strategy \
+ template_function template_class
 
-.PHONY: subdirs $(SUBDIRS)
+.PHONY: $(SUBDIRS) subdirs
 
-subdirs: $(SUBDIRS)
+#default target
+subdirs: $(SUBDIRS) 
 
 $(SUBDIRS):
-	@echo "-------\n" $@ "will be built"
+	@echo "\n\n**********" $@ "**********"
 	$(MAKE) --directory=$@ $(TARGET)
-
 clean:
 	$(MAKE) TARGET=clean
