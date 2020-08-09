@@ -1,9 +1,8 @@
-SUBDIRS := polymorphism inheritance class
+SUBDIRS := polymorphism inheritance class strategy template_function template_class
 
 .PHONY: subdirs $(SUBDIRS)
 
-subdirs: all $(SUBDIRS)
-all: $(SUBDIRS)
+subdirs: $(SUBDIRS)
 
 $(SUBDIRS):
 	@echo "-------\n" $@ "will be built"
