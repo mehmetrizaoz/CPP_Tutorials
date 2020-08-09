@@ -1,8 +1,13 @@
-SUBDIRS = polymorphism inheritance class
+SUBDIRS := polymorphism inheritance class
 
 .PHONY: subdirs $(SUBDIRS)
 
-subdirs: $(SUBDIRS)
+subdirs: all $(SUBDIRS)
+all: $(SUBDIRS)
 
 $(SUBDIRS):
-	$(MAKE) -C $@
+	@echo "-------\n" $@ "will be built"
+	$(MAKE) --directory=$@ $(TARGET)
+
+clean:
+	$(MAKE) TARGET=clean
