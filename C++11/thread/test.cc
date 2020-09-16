@@ -24,8 +24,9 @@ int main(){
   thread second (bar, 0); 
   
   cout<< this_thread::get_id() << endl;
-  cout << "main, foo and bar now execute concurrently...\n";
-  
+  cout << "main, foo, bar execute concurrently" << endl;
+  cout << "Number of threads =" << thread::hardware_concurrency() << endl;  
+    
   first.detach();  
   
   if (first.joinable()){
