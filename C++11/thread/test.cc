@@ -7,7 +7,7 @@ using namespace std;
 void foo(){
   cout << "foo enter" << endl;
   for (int i=0; i<5; i++){
-     cout << endl <<"hhhhhhhhh" << endl;
+     cout << endl <<"mmhhhhhhhhh" << endl;
      this_thread::sleep_for(chrono::seconds(1));
   }
   cout << "foo exit" << endl;
@@ -19,9 +19,12 @@ void bar(int x){
   cout << "bar exit" << endl;
 }
 
+
 int main(){
   thread first (foo);     
   thread second (bar, 0); 
+  thread third (bar, 1); 
+  thread fifth (bar, 0);     
   
   cout<< this_thread::get_id() << endl;
   cout << "main, foo, bar execute concurrently" << endl;
