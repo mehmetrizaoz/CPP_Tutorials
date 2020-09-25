@@ -1,18 +1,15 @@
 #include "header.h"
 
 struct Address {
-public:
     string addr;
 };
 
 struct Person{
-    string name;
-    int age;
-    Person(const string &name, int age) : name(name), age(age) { }
-
-    Address address;
-    Person(Address address) : address(address){ }
-     
+   string name;
+   int age;
+   Address address;    
+   Person(Address address) : address(address){ }     
+   Person(const string &name, int age) : name(name), age(age) { }
 };
 
 struct PersonFactory{
@@ -51,7 +48,7 @@ int main(){
 
     array<float,3> coeff{0.1,0.2,0.3};          
     vector<int> what_is_this{123};
-    // careful here
+
     map<string,string> capitals = {
        {"UK", "London"},
        {"France", "Paris"}
@@ -63,22 +60,17 @@ int main(){
     auto p = PersonFactory::make_person("Dmitri", 500);
     cout << p.name << " " << p.age  << endl;
 
-    // most vexing parse
-    //Person person(Address());
     Address myAddress{"izmir"};   
     Person person{myAddress};
     cout << person.address.addr << endl;
     auto z = person.address;
     cout << z.addr << endl;
 
-    // here's a more interesting case
-    Exchange e{1,2,3};
-    
-    
+    Exchange e{1,2,3};    
+        
     Exchange b{1.1, 2.2};
     cout << b.rates[0] << " " << b.rates[1] << endl;
-
-    return 0; // this line is critical
+    return 0;
 }
 
 
