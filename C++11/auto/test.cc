@@ -25,11 +25,8 @@ int main(){
     typedef decltype(42) myint;
     typedef decltype(add(3, 4.5)) qtype;
     
-
-    vector< int > v = { 1, 2, 3, 4, 5, 6 };
-    
-    //vector< int >::const_iterator iter; 
-    
+    vector< int > v = { 1, 2, 3, 4, 5, 6 };    
+    //vector< int >::const_iterator iter;     
     for (auto iter = v.begin(); iter!= v.end(); ++iter )
        cout << *iter << ' ';            
     cout << endl;
@@ -43,8 +40,7 @@ int main(){
     auto d = {1,2,3}; //list
     map<string, vector<double>> ticks;
     //map<string, vector<double>>::iterator it = ticks.begin();
-    auto it = ticks.begin();
-    
+    auto it = ticks.begin();    
     
     return 0;
 }

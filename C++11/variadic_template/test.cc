@@ -12,6 +12,7 @@ T add(const T arg, const ARGS... args){
   return arg + add(args...);
 }
 
+//-----------------------------------
 
 void log(){
 }
@@ -21,7 +22,6 @@ void log(T first, Args ... args) {
     std::cout<<first<<" ";
     log(args ...);
 }
-
 
 int main(){
   cout << add(1, 2, 3, 4, 5, 6) << endl;

@@ -32,7 +32,7 @@ void foo() { std::cout << "foo()\n"; }
 void bar() { std::cout << "bar()\n"; }
 //-------------------------
 void mylog() {cout << "hhh";}
-
+//-------------------------
 template <typename T, typename... Args>
 void mylog(T first, Args ... args){
    cout << first << " ";
@@ -42,15 +42,14 @@ void mylog(T first, Args ... args){
 
 int main() { 
    vector<int> v {4, 1, 3, 5, 2, 3, 1, 7}; 
-   for_each(v.begin(), v.end(), [](int element){cout<<element<< " ";});   
+   for_each(v.begin(), v.end(), [](int e){cout << e << " ";});   
    cout << endl;
 //-------------------------   
    int sum = 0;
    for_each(v.begin(), v.end(), [&sum](int i){sum += i;});
    cout<<"sum: "<<sum<<endl;
 //-------------------------
-   for_each(v.begin(),v.end(),[](int& v){static int n = 1; v=n++;});
-   for_each(v.begin(),v.end(),[](int i){cout << i << " ";});
+   for_each(v.begin(),v.end(),[](int v){static int n = 1; v=n++;cout << v << " ";});
    cout << endl;
 //-------------------------
    int x = 100, y = 200;
@@ -93,10 +92,8 @@ int main() {
    variadic_generic_lambda(1, "lol", 1.1);
    cout<<endl;
    variadic_generic_lambda(1, 2.2, 1.1, "mehmet", 77);   
-   
+//-------------------------   
 } 
-
-
 
 
 
