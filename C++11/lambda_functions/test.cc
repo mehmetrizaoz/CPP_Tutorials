@@ -28,8 +28,8 @@ public:
    }     
 };
 //-------------------------
-void foo() { std::cout << "foo()\n"; }
-void bar() { std::cout << "bar()\n"; }
+void foo() { cout << "foo()\n"; }
+void bar() { cout << "bar()\n"; }
 //-------------------------
 void mylog() {cout << "hhh";}
 //-------------------------
@@ -63,12 +63,17 @@ int main() {
    f();
 //-------------------------   
    auto g = [](int a, int b)->int{ return a*b; };
-   cout << g(4, 5) << endl;   
+   cout << g(4, 5) << endl;
 //-------------------------      
    cout << [](int a, int b)->int {return a*b;}(4, 5) << endl;  
 //-------------------------      
    cout << [](int n)->int {return n*n;}(5) << endl;      
 //-------------------------        
+   int zero = 0; 
+   auto is_positive = [&](int n) { return n > zero; };
+   bool s = is_positive(-2);
+   cout << boolalpha << "nnnnnnnnnnnn" << is_positive(-2) << endl;
+//-------------------------        	
    auto k = [&sum](int a, int b){ sum = a*b; };
    k(5,7);
    cout << sum << endl;  
@@ -92,7 +97,11 @@ int main() {
    variadic_generic_lambda(1, "lol", 1.1);
    cout<<endl;
    variadic_generic_lambda(1, 2.2, 1.1, "mehmet", 77);   
+   cout<<endl;
 //-------------------------   
+   function<int(int)> fib = [&fib](int x){ return x < 2 ? 1 : fib(x-2) + fib(x-1); };
+   auto fib8 = fib(8);
+   cout << fib8 << endl;
 } 
 
 
