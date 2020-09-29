@@ -1,14 +1,4 @@
-#include <iostream>
-#include <cstdio>
-#include <iostream>
-#include <string>
-#include <vector>
-#include <map>
-#include <algorithm>
-#include <functional>
-#include <memory>
-#include <type_traits>
-#include <initializer_list>
+#include <bits/stdc++.h>
   
 using namespace std;
 
