@@ -1,23 +1,14 @@
-vpath %.cc src
-vpath %.h include
-CC := g++
+TARGETS=hello suite assert
 
-CPPFLAGS = -I include
-objects = test.o
+all: $(TARGETS)
+test: $(TARGETS) $(addprefix run-,$(TARGETS))
 
-all: exec
+%: %.cpp
+	$(CXX) -o$@ $^ -lboost_unit_test_framework
+	#g++ -ohello hello.cpp -lboost_unit_test_framework
 
-exec: $(objects)
-	$(CC) $^ -o $@
+run-%: %
+	-./$^ --output_format=XML --log_level=test_suite > $(^)-report.xml
 
-%.o: %.c
-	$(CC) $(CPPFLAGS) -c $<
-
-.PHONY: clean help
 clean:
-	rm exec $(objects)
-
-help:
-	@echo "sudo apt-get install libboost-all-dev"
-	@echo "make"
-	@echo "make clean"
+	rm $(TARGETS) *-report.xml
