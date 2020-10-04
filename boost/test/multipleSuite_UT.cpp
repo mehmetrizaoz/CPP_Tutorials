@@ -1,3 +1,8 @@
+/*
+g++ -o multipleSuites multipleSuites_UT.cpp -lboost_unit_test_framework
+./multipleSuites --log_level=test_suite
+*/
+
 #define BOOST_TEST_DYN_LINK
 #define BOOST_TEST_MODULE Suites
 #include <boost/test/unit_test.hpp>
