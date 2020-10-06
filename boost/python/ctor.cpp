@@ -1,18 +1,18 @@
 #include <string>
 #include <sstream>
 
-struct Ctor
-{
-    Ctor(std::string msg) : mMsg(msg) {}
-    Ctor(double x,double y)
-        {
-            std::stringstream os;
-            os << x << ":" << y << std::ends;
-            set(os.str());
+using namespace std;
+
+struct Ctor{
+    Ctor(string msg) : mMsg(msg) {}
+    Ctor(double x,double y){
+        stringstream os;
+        os << x << ":" << y << ends;
+        set(os.str());
     }
-    void set(std::string msg) { mMsg = msg; }
-    std::string greet() { return mMsg; }
-    std::string mMsg;
+    void set(string msg) { mMsg = msg; }
+    string greet() { return mMsg; }
+    string mMsg;
 };
 
 #include <boost/python.hpp>
