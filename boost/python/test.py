@@ -1,0 +1,3 @@
+import mantid
+
+mantid.sayHello()
