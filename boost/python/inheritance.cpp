@@ -1,31 +1,28 @@
 #include <iostream>
 #include <string>
 
-class Base 
-{
+using namespace std;
+
+class Base{
 public:
-    virtual std::string name() const { return "Base"; }
+    virtual string name() const { return "Base"; }
     virtual ~Base() {}
 };
 
-class Derived : public Base
-{
+class Derived : public Base{
 public:
-    virtual std::string name() const { return "Derived"; }
+    virtual string name() const { return "Derived"; }
 };
 
-void fb(Base *b)
-{
-    std::cout << b->name() << " called." << std::endl;
+void fb(Base *b){
+    cout << b->name() << " called." << endl;
 }
 
-void fd(Derived *d)
-{
-    std::cout << "Derived " << d->name() << " called." << std::endl;
+void fd(Derived *d){
+    cout << "Derived " << d->name() << " called." << endl;
 }
 
-Base* factory()
-{
+Base* factory(){
     return new Derived;
 }
 
@@ -44,4 +41,7 @@ BOOST_PYTHON_MODULE(inheritance)
     def("fb", fb);
     def("fd", fd);
     def("factory", factory, return_value_policy<manage_new_object>());
-}	
+}
+
+
+
