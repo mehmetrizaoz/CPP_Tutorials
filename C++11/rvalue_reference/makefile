@@ -19,6 +19,6 @@ clean:
 	rm my_exec $(objects)
 
 help:
-	@echo "make"
+	@echo "https://www.internalpointers.com/post/c-rvalue-references-and-move-semantics-beginners"
 	@echo "make clean"
 	@echo "ldconfig -p"
