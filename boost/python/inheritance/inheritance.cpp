@@ -31,14 +31,14 @@ using namespace boost::python;
 
 BOOST_PYTHON_MODULE(inheritance)
 {
-    class_<Base, boost::noncopyable>("Base")
+    class_<Base, boost::noncopyable>("Basedd")
         .def("name", &Base::name)
     ;
 
     class_<Derived, bases<Base> >("Derived")
     ;
 
-    def("fb", fb);
+    def("fbs", fb);
     def("fd", fd);
     def("factory", factory, return_value_policy<manage_new_object>());
 }

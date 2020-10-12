@@ -2,15 +2,15 @@
 
 import inheritance
 
-b = inheritance.Base()
+b = inheritance.Basedd()
 d = inheritance.Derived()
 
-inheritance.fb(b)
-inheritance.fb(d)
+inheritance.fbs(b)
+inheritance.fbs(d)
 
 # not possible, fd is only for Derived objects
 # inheritance.fd(b)
 inheritance.fd(d)
 
 x = inheritance.factory()
-inheritance.fb(x)
+inheritance.fbs(x)
