@@ -43,8 +43,22 @@ int x;
 }; 
 
 printf("Size of struct: %ld\n", sizeof(struct C)); 
-  
+struct D { 
 
+	char x; 
+	char y;
+	//2 padding
+	
+	int z; 
+	
+	char k;
+	char k2;
+	char k3;
+	char k4;
+				
+	int t; 
+}; 
+printf("Size of struct: %ld\n", sizeof(struct D)); 
 return 0; 
 } 
 
